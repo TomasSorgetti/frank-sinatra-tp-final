@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <title>Document</title>
+  </head>
+  <body class="contact_body">
+    <div class="wrapper">
+    <header id="header_contacto">
+      <nav class="container">
+        <ul>
+          <li><a href="../index.html">Inicio</a></li>
+          <li>
+            <a href="discografia.html">Discografía</a>
+          </li>
+          <li><a class="nav_active" href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main id="main_contacto" >
+      <div class="contact_text_cont">
+        <h1>Completá el formulario para suscribirte</h1>
+        <p>Si querés suscribirte a nuestra lista de correos, así poder informarte de todas las los hits, completá el formulario y te mandaremos a tu correo los géneros que más te interesan!</p>
+      </div>
+      <form action="gracias.html" class="contact_form" method="post" enctype="multipart/form-data">
+        <ul>
+          <!-- Nombre field -->
+          <li class="form_input_cont">
+            <label for="nombre_apellido">Nombre y Apellido:*</label>
+            <input
+              name="nombre_apellido"
+              type="text"
+              id="contact_name"
+              required
+            />
+          </li>
+          <!-- email field -->
+          <li class="form_input_cont">
+            <label for="email">Email:*</label>
+            <input id="email" name="email" type="email" required />
+          </li>
+          <!-- Email field -->
+          <li class="form_input_cont">
+            <label for="mensaje">Mensaje:*</label>
+            <textarea name="mensaje" id="mensaje"></textarea>
+          </li>
+          <!-- File field -->
+          <li class="form_inputfile_cont">
+            <label for="file">Archivo:</label>
+            <input id="file" name="file" type="file" />
+          </li>
+          <!-- Select field -->
+          <li class="form_select_cont">
+            <label for="generos_musicales">Géneros que le interesan:*</label>
+            <select name="generos_musicales" id="generos_musicales">
+              <option value="jazz" selected>Jazz</option>
+              <option value="blues">Blues</option>
+              <option value="rock">Rock</option>
+              <option value="country">Country</option>
+              <option value="pop">Pop</option>
+              <option value="clasica">Clásica</option>
+            </select>
+            <ul id="generos_list"></ul>
+          </li>
+          <li class="form_checkbox_cont">
+            <input type="checkbox" name="acepto" id="acepto" required>
+            <label id="acepto" for="acepto">Acepto los <a href="#">términos y condiciones</a></label>
+          </li>
+
+          <li class="contact_button_cont">
+            <button type="submit">Enviar</button>
+          </li>
+        </ul>
+      </form>
+    </main>
+    <footer>
+      <nav class="container">
+        <a class="footer_logo" href="discografia.html">Frank Sinatra</a>
+        <ul>
+          <li><a href="../index.html">Inicio</a></li>
+          <li>
+            <a href="discografia.html">Discografía</a>
+          </li>
+          <li>
+            <a class="nav_active" href="contacto.html">Contacto</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="footer_copyright">
+        <p>Tomás Sorgetti - Maquetado y Desarrollo Web Escuela Da Vinci</p>
+        <p>TP2 del primer cuatrimestre - Profesora Mabel García</p>
+        <p>2024</p>
+      </div>
+    </footer>
+    </div>
+    <!-- Scripts -->
+    <script src="../scripts/contact.js"></script>
+  </body>
+</html>

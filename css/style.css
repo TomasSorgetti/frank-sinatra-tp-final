@@ -1,0 +1,864 @@
+/*********** Fonts ***********/
+@font-face {
+    font-family: 'Poppins';
+    src: url('../fonts/Poppins-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../fonts/Poppins-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SourceSerif4';
+    src: url('../fonts/SourceSerif4-VariableFont_opsz\,wght.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+/********** Audio ***********/
+audio::-webkit-media-controls,
+audio::-moz-media-controls,
+audio::-ms-media-controls,
+audio::-o-media-controls,
+audio::media-controls {
+    display: none;
+}
+
+#playPauseButton {
+    height: 60px;
+    width: 60px;
+    cursor: pointer;
+    border: 2px solid white;
+    position: fixed;
+    right: 40px;
+    bottom: 80px;
+    background-color: #030921;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("../assets/mute.png");
+}
+
+#playPauseButton.active {
+    background-image: url("../assets/reproducir.png");
+}
+
+/*********** Resets ***********/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    color: white;
+    background-color: #00255C;
+}
+
+.wrapper {
+    max-width: 1680px;
+    margin: 0 auto;
+    position: relative;
+}
+
+main {
+    background-color: white;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "SourceSerif4", serif;
+    color: #030921;
+}
+
+h1 {
+    font-size: 7.5rem;
+    color: white;
+}
+
+h2 {
+    font-size: 3.75rem;
+}
+
+p {
+    font-size: 1.5rem;
+    color: #1b3760;
+    max-width: 600px;
+}
+
+.container {
+    max-width: 1123px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.parallax {
+    position: relative;
+    animation: fade-right 1s ease-in-out;
+}
+
+.colored {
+    font-weight: 700;
+    color: #00255C;
+}
+
+
+/********** Header ***********/
+header {
+    background-color: #030921;
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: cover;
+    height: 834px;
+}
+
+.header_inicio {
+    background-image: url("../assets/hero_without_font.jpg");
+}
+
+header nav {
+    display: flex;
+    justify-content: end;
+    padding: 40px 0px;
+    z-index: 10;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 60px;
+}
+
+nav ul li a {
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: white;
+    padding: 0 2px;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a::before {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    height: 3px;
+    width: 0;
+    background-color: white;
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+nav ul li:hover a::before {
+    width: 100%;
+}
+
+.nav_active {
+    font-weight: 700;
+}
+
+.nav_active::before {
+    width: 100%;
+}
+
+header section {
+    height: 80%;
+    padding: 70px 0px;
+    position: relative;
+}
+
+header h1 {
+    position: relative;
+}
+
+header h1::before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    background-color: white;
+    height: 4px;
+    width: var(--width, 300px);
+    bottom: -10px;
+    left: 0px;
+    transition: width 0.3s ease;
+}
+
+header section span {
+    display: inline-block;
+    margin: 40px 0;
+    text-transform: uppercase;
+    font-size: 1.75rem;
+    font-weight: 600;
+}
+
+header section p {
+    max-width: 600px;
+    color: rgb(231, 231, 231);
+}
+
+.header_btn {
+    display: inline-block;
+    margin: 60px 0;
+    border-radius: 60px;
+    border: solid white 2px;
+    padding: 10px 50px;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.header_btn:hover {
+    background-color: rgba(255, 255, 255, 0.6);
+    color: #030921;
+}
+
+
+
+/********** Main Section ***********/
+.biografia {
+    padding: 100px 0px;
+}
+
+.biografia_first {
+    animation: fade-right 2s ease-in-out;
+    animation-timeline: view();
+    animation-range: 0 800px;
+}
+
+.biografia_second {
+    animation: fade-left 2s ease-in-out;
+    animation-timeline: view();
+    animation-range: 0 800px;
+}
+
+.biografia_first,
+.biografia_second {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.biografia_first img {
+    margin-left: 20px;
+}
+
+.biografia_second img {
+    margin-right: 80px;
+}
+
+.biografia h2 {
+    margin-bottom: 60px;
+    position: relative;
+    z-index: 2;
+}
+
+.biografia h2::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    background-color: rgba(49, 129, 254, 0.6);
+    height: 41px;
+    width: 225px;
+    bottom: -5px;
+    left: 36px;
+}
+
+.biografia_second {
+    margin-top: 80px;
+}
+
+
+/************ Galería **********/
+.galeria {
+    background-color: #030921;
+    padding: 100px 0px;
+    text-align: center;
+}
+
+.galeria h2 {
+    margin-bottom: 40px;
+    color: white;
+}
+
+.galeria_grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    animation: fade-in 2s ease-in-out;
+    animation-timeline: view();
+    animation-range: 0 800px;
+}
+
+
+/*********** Jazz Section **********/
+.jazz_container {
+    padding: 100px 0px;
+    text-align: center;
+}
+
+.jazz_container p {
+    display: inline-block;
+    width: 100%;
+    margin: 40px auto;
+    width: 600px;
+}
+
+.jazz_container ul {
+    color: #00255C;
+    margin: 40px auto;
+    width: fit-content;
+    text-align: left;
+}
+
+
+
+
+
+
+
+
+/*********** Call to Action **********/
+.call_to_action {
+    padding-top: 100px;
+    display: flex;
+    justify-content: space-between;
+    animation: fade-right 2s ease-in-out;
+    animation-timeline: view();
+    animation-range: 0 800px;
+}
+
+.call_to_action h2 {
+    position: relative;
+    z-index: 2;
+    line-height: 1;
+}
+
+.call_to_action h2::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    background-color: rgba(49, 129, 254, 0.6);
+    height: 41px;
+    width: 350px;
+    bottom: -15px;
+    left: 72px;
+}
+
+.call_to_action p {
+    display: block;
+    margin: 70px 0px;
+}
+
+.call_to_action a {
+    padding: 12px 36px;
+    background-color: #030921;
+    color: white;
+    text-decoration: none;
+    border-radius: 60px;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.call_to_action a:hover {
+    background-color: #00255C;
+}
+
+
+/************ footer **********/
+
+footer {
+    background-color: #030921;
+    color: white;
+    padding: 20px 0px;
+}
+
+.footer_copyright {
+    width: 100%;
+    text-align: center;
+}
+
+footer p {
+    width: 800px;
+    margin: 0 auto;
+    font-size: 1rem;
+    color: rgb(231, 231, 231);
+}
+
+footer nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 80px;
+}
+
+.footer_logo {
+    font-size: 3.75rem;
+    font-family: "SourceSerif4", serif;
+    font-weight: 700;
+    text-decoration: none;
+    color: white;
+}
+
+
+
+/*********** Discografia ***********/
+
+/********** Header ***********/
+.header_discografia section {
+    position: relative;
+    padding-bottom: 0px;
+    animation: fade-right 1s ease-in-out;
+}
+
+.header_discografia img {
+    position: absolute;
+    bottom: -52px;
+    right: -200px;
+}
+
+/********** Main ***********/
+.discografia_container {
+    padding: 100px 0px;
+    text-align: center;
+    position: relative;
+}
+
+.discografia {
+    position: absolute;
+    opacity: 0;
+    margin: 80px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    gap: 40px;
+    color: #00255C;
+    transition: all 0.8s ease;
+}
+
+.discografia.active {
+    opacity: 1;
+    z-index: 2;
+}
+
+.discografia h3 {
+    font-size: 2rem;
+    color: #030921;
+    margin-bottom: 20px;
+}
+
+.discografia_album_year {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    color: #6b6b6b;
+    font-size: 1rem;
+    font-style: italic;
+}
+
+.discografia img {
+    border-radius: 6px;
+}
+
+.discografia_album_description {
+    text-align: left;
+    font-size: 1.5rem;
+    position: relative;
+    height: 513px;
+}
+
+.discografia_album_songs {
+    margin-left: 24px;
+    margin-top: 20px;
+
+}
+
+.discografia_album_button {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    color: #030921;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.discografia_album_button:hover {
+    text-decoration: underline;
+}
+
+
+/*********** Album Selector ***********/
+.album_selector {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 80px;
+    margin-top: 600px;
+}
+
+.album {
+    width: 249px;
+    height: 249px;
+    border-radius: 6px;
+    cursor: pointer;
+    filter: brightness(0.3);
+    transition: all 0.6s ease;
+}
+
+.album:hover {
+    box-shadow: #00255C 0px 0px 5px 2px;
+
+}
+
+.album.active {
+    filter: brightness(1);
+    transform: translateY(-15px);
+}
+
+
+.album1 {
+    background-image: url("../assets/album/album_min/new_york_min.png");
+}
+
+.album2 {
+    background-image: url("../assets/album/album_min/my_way_min.png");
+}
+
+.album3 {
+    background-image: url("../assets/album/album_min/come_fly_with_me.png");
+}
+
+.album4 {
+    background-image: url("../assets/album/album_min/thats_life_min.png");
+}
+
+.video_container {
+    text-align: center;
+    margin-top: 80px;
+}
+
+.video_container iframe {
+    margin: 80px auto;
+}
+
+/*********** Contacto ***********/
+#header_contacto,
+#header_gracias {
+    height: 120px;
+}
+
+#main_contacto {
+    color: #030921;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    padding: 120px 0px;
+}
+
+.contact_text_cont {
+    max-width: 600px;
+}
+
+.contact_text_cont h1 {
+    color: #030921;
+    font-size: 3.5rem;
+}
+
+.contact_text_cont p {
+    margin-top: 20px;
+}
+
+.contact_form {
+    background-color: white;
+    padding: 60px;
+    border-radius: 16px;
+    width: 500px;
+    box-shadow: -2px 3px 25px 1px rgba(140, 140, 140, 0.62);
+    -webkit-box-shadow: -2px 3px 25px 1px rgba(140, 140, 140, 0.62);
+    -moz-box-shadow: -2px 3px 25px 1px rgba(140, 140, 140, 0.62);
+}
+
+.form_input_cont {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin-bottom: 20px
+}
+
+.form_input_cont input,
+.form_input_cont textarea {
+    height: 46px;
+    border: 1px solid #dcdcdc;
+    border-radius: 6px;
+    width: 100%;
+    padding: 12px;
+    text-transform: initial;
+}
+
+/*! No funciona T_T */
+/*
+.form_input_cont textarea::first-letter{
+    text-transform: uppercase;
+} 
+*/
+
+.form_input_cont textarea {
+    min-height: 160px;
+    resize: none;
+}
+
+.form_inputfile_cont {
+    margin: 20px 0;
+}
+
+.contact_form ul {
+    list-style: none;
+}
+
+.form_select_cont {
+    margin: 10px 0;
+}
+
+#generos_list {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 10px 0;
+}
+
+#generos_list li {
+    background-color: #030921;
+    color: white;
+    padding: 2px 14px;
+    border-radius: 40px;
+    display: flex;
+    gap: 10px;
+}
+
+/*! No funciona T_T */
+/* .form_checkbox_cont input:checked {
+    background-color: #030921;
+} */
+.form_checkbox_cont a {
+    color: #030921;
+    font-weight: 700;
+}
+
+.contact_button_cont {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.contact_button_cont button {
+    margin-top: 20px;
+    background-color: #030921;
+    color: white;
+    border: 3px solid #030921;
+    padding: 10px 36px;
+    border-radius: 60px;
+    font-weight: 600;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.contact_button_cont button:hover {
+    background-color: white;
+    color: #030921;
+    transition: 0.3s ease-in-out;
+}
+
+.remove-option {
+    cursor: pointer;
+}
+
+
+
+
+
+
+/************ Gracias **************/
+.gracias_body {
+    color: #030921;
+}
+
+#gracias_title {
+    color: #030921;
+    font-size: 5rem;
+
+}
+
+.gracias_body main {
+    text-align: center;
+    padding: 120px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px
+}
+
+#generos_lista {
+    display: flex;
+    gap: 10px;
+    margin: 10px 0;
+    flex-wrap: wrap;
+    max-width: 600px;
+    list-style: none;
+}
+
+#generos_lista li {
+    background-color: #00255C;
+    color: white;
+    padding: 8px 18px;
+    border-radius: 40px;
+    gap: 10px
+}
+
+.gracias_body main a {
+    background-color: #030921;
+    color: white;
+    border: 3px solid #030921;
+    padding: 10px 36px;
+    border-radius: 60px;
+    font-weight: 600;
+    font-size: 1.2rem;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.gracias_body main a:hover {
+    background-color: white;
+    color: #030921;
+    transition: 0.3s ease-in-out;
+}
+
+
+@media screen and (max-width: 1024px) {
+    .container {
+        padding: 20px 60px;
+    }
+
+    header {
+        height: 640px;
+    }
+
+    header section h1 {
+        font-size: 5rem;
+    }
+
+    header section span {
+        font-size: 1.4rem;
+    }
+
+    header section p {
+        font-size: 1.1rem;
+        max-width: 500px;
+    }
+
+    header section .header_btn {
+        font-size: 1.1rem;
+        padding: 8px 30px;
+    }
+
+    .biografia {
+        font-size: 1rem;
+        padding: 120px 60px;
+    }
+
+    .biografia h2 {
+        font-size: 3.3rem;
+        margin-bottom: 40px;
+    }
+
+    .biografia p {
+        font-size: 1.2rem;
+    }
+
+    .biografia img {
+        width: 420px;
+        height: auto;
+    }
+
+    .call_to_action {
+        padding-top: 40px;
+        padding-bottom: 0;
+    }
+
+    .call_to_action h2 {
+        font-size: 2.6rem;
+        width: 320px;
+    }
+
+    .call_to_action h2::before {
+        width: 254px;
+        left: 52px;
+    }
+
+    .call_to_action p {
+        font-size: 1.3rem;
+    }
+
+    .call_to_action a {
+        font-size: 1.3rem;
+        padding: 10px 30px;
+    }
+}
+
+
+
+
+
+
+
+
+/*********** Keyframes **********/
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-right {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+@keyframes fade-left {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
