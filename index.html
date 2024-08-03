@@ -11,30 +11,38 @@
   <body>
     <div class="wrapper">
       <header class="header_inicio">
-        <nav class="container">
-          <ul>
+        <nav class="container navbar" >
+          <div class="hamburger_button">
+              <span></span>
+              <span></span>
+              <span></span>
+          </div>
+          <ul class="nav_links">
             <li><a class="nav_active" href="index.html">Inicio</a></li>
             <li><a href="pages/discografia.html">Discografía</a></li>
             <li><a href="pages/contacto.html">Contacto</a></li>
           </ul>
         </nav>
-        <section class="container parallax">
-          <!-- hero title -->
-          <h1 id="title">Frank Sinatra</h1>
-          <!-- hero subtitle -->
-          <span>La voz que definió una era</span>
-          <!-- hero description -->
-          <p>
-            Uno de los cantantes más influyentes del siglo XX, conocido por su
-            voz inigualable y su estilo único.
-          </p>
-          <!-- hero CTA button -->
-          <a class="header_btn" href="#main">ver más</a>
-        </section>
       </header>
 
       <!-- main content -->
       <main id="main">
+        <!-- hero section -->
+        <section class="hero_inicio">
+          <div class="container">
+            <!-- hero title -->
+            <h1 id="title">Frank Sinatra</h1>
+            <!-- hero subtitle -->
+            <span>La voz que definió una era</span>
+            <!-- hero description -->
+            <p>
+              Uno de los cantantes más influyentes del siglo XX, conocido por su
+              voz inigualable y su estilo único.
+            </p>
+            <!-- hero CTA button -->
+            <a class="header_btn" href="#main">ver más</a>
+          </div>
+        </section>
         <!-- biografía section -->
         <section class="biografia container">
           <div class="biografia_first">
@@ -176,5 +184,6 @@
     <!-- scripts, api jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="scripts/main.js"></script>
+    <script src="scripts/navbar.js"></script>
   </body>
 </html>

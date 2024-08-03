@@ -10,9 +10,14 @@
   </head>
   <body class="contact_body">
     <div class="wrapper">
-    <header id="header_contacto">
-      <nav class="container">
-        <ul>
+    <header class="contact_nav">
+      <nav class="container navbar" >
+          <div class="hamburger_button">
+              <span></span>
+              <span></span>
+              <span></span>
+          </div>
+          <ul class="nav_links">
           <li><a href="../index.html">Inicio</a></li>
           <li>
             <a href="discografia.html">Discografía</a>
@@ -21,16 +26,17 @@
         </ul>
       </nav>
     </header>
-    <main id="main_contacto" >
+    <main id="main_contacto">
+      <div class="container contact_container" >
       <div class="contact_text_cont">
         <h1>Completá el formulario para suscribirte</h1>
-        <p>Si querés suscribirte a nuestra lista de correos, así poder informarte de todas las los hits, completá el formulario y te mandaremos a tu correo los géneros que más te interesan!</p>
+        <p>Si querés suscribirte a nuestra lista de correos, así poder informarte de todos los los hits, completá el formulario y te mandaremos a tu correo los géneros que más te interesan!</p>
       </div>
       <form action="gracias.html" class="contact_form" method="post" enctype="multipart/form-data">
         <ul>
           <!-- Nombre field -->
           <li class="form_input_cont">
-            <label for="nombre_apellido">Nombre y Apellido:*</label>
+            <label class="obligatorio" for="nombre_apellido">Nombre y Apellido:</label>
             <input
               name="nombre_apellido"
               type="text"
@@ -40,13 +46,13 @@
           </li>
           <!-- email field -->
           <li class="form_input_cont">
-            <label for="email">Email:*</label>
+            <label class="obligatorio" for="email">Email:</label>
             <input id="email" name="email" type="email" required />
           </li>
           <!-- Email field -->
           <li class="form_input_cont">
-            <label for="mensaje">Mensaje:*</label>
-            <textarea name="mensaje" id="mensaje"></textarea>
+            <label class="obligatorio" for="mensaje">Mensaje:</label>
+            <textarea name="mensaje" id="mensaje" required></textarea>
           </li>
           <!-- File field -->
           <li class="form_inputfile_cont">
@@ -55,7 +61,7 @@
           </li>
           <!-- Select field -->
           <li class="form_select_cont">
-            <label for="generos_musicales">Géneros que le interesan:*</label>
+            <label for="generos_musicales">Géneros que le interesan:</label>
             <select name="generos_musicales" id="generos_musicales">
               <option value="jazz" selected>Jazz</option>
               <option value="blues">Blues</option>
@@ -76,6 +82,7 @@
           </li>
         </ul>
       </form>
+      </div>
     </main>
     <footer>
       <nav class="container">
@@ -99,5 +106,6 @@
     </div>
     <!-- Scripts -->
     <script src="../scripts/contact.js"></script>
+    <script src="../scripts/navbar.js"></script>
   </body>
 </html>

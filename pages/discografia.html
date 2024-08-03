@@ -9,10 +9,15 @@
   <body>
     <div class="wrapper">
       <!-- header -->
-      <header class="header_discografia">
+      <header class="discografia_nav">
         <!-- nav -->
-        <nav class="container">
-          <ul>
+        <nav class="container navbar" >
+          <div class="hamburger_button">
+              <span></span>
+              <span></span>
+              <span></span>
+          </div>
+          <ul class="nav_links">
             <li><a href="../index.html">Inicio</a></li>
             <li>
               <a class="nav_active" href="discografia.html">Discografía</a>
@@ -20,9 +25,14 @@
             <li><a href="contacto.html">Contacto</a></li>
           </ul>
         </nav>
+        
+      </header>
+
+      <!-- main content -->
+      <main>
         <!-- hero section -->
-        <section class="container">
-          <div>
+        <section class="hero_discografia">
+          <div class="container">
             <!-- hero title -->
             <h1>Frank Sinatra</h1>
             <!-- hero subtitle -->
@@ -39,15 +49,11 @@
             alt="Frank Sinatra mirando de frente"
           />
         </section>
-      </header>
-
-      <!-- main content -->
-      <main>
         <!-- Albums y canciones section -->
         <section class="container discografia_container">
           <!-- albums y canciones title -->
           <h2>Álbumes y Canciones</h2>
-
+          <div class="discografia_albums_cont">
           <!-- album 1 -->
           <article class="discografia active">
             <!-- album image -->
@@ -180,15 +186,16 @@
               >
             </div>
           </article>
+          </div>
+          <!-- album selector -->
+          <div class="container album_selector">
+            <span class="album album1 active"></span>
+            <span class="album album2"></span>
+            <span class="album album3"></span>
+            <span class="album album4"></span>
+          </div>
         </section>
 
-        <!-- album selector -->
-        <div class="container album_selector">
-          <span class="album album1 active"></span>
-          <span class="album album2"></span>
-          <span class="album album3"></span>
-          <span class="album album4"></span>
-        </div>
         <section class="video_container">
           <h2>Escucha algunos éxitos de Frank Sinatra</h2>
           <iframe
@@ -226,5 +233,6 @@
     <!-- scripts, api jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="../scripts/main.js"></script>
+    <script src="../scripts/navbar.js"></script>
   </body>
 </html>
